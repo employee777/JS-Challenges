@@ -312,7 +312,7 @@ const getSumOfGrades = results => {
         return sum;
     };
     
-    //sample usage
+//sample usage
     const results = [{
         date: "2018-12-13",
         grade: 14
@@ -321,3 +321,123 @@ const getSumOfGrades = results => {
         grade: 18
     }]
     console.log(getSumOfGrades(results));
+
+    const getAverageAge = users => {
+        let sum = 0;
+            users.forEach(user => sum += user.age);
+            return sum / users.length;
+        };
+        
+//sample usage
+        const users = [{
+            joined_on: "2018-12-13",
+            age: 14
+        }, {
+            joined_on: "2018-12-15",
+            age: 18
+        }]
+        console.log(getAverageAge(users));
+        
+
+///You can empty an array, by setting its length to 0:
+
+        const items = ["Pen", "Paper"];
+        items.length = 0;
+
+//array.splice
+//You can also delete specific elements by using the splice(start[, deleteCount]) method.
+
+        const items = ["Pen", "Paper", "Staples"];
+        const deletedItem = items.splice(0, 1); // removes one element at index 0
+        console.log(deletedItem); // ["Pen"]
+
+        console.log(items); // ["Paper", "Staples"]
+
+//From a string, you can create an array of its characters:
+        const name = "Jad";
+        const characters = [...name]; //["J", "a", "d"]
+
+        // Destructure from array
+
+        const dimensions = [20, 5]
+        const width = dimensions[0];
+        const height = dimensions[1];
+        console.log(width); //20
+        console.log(height); //5
+
+
+        const dimensions = [20, 5]
+// destructure first array item into "width"
+// and 2nd array item into "height"
+        const [width, height] = dimensions;
+        console.log(width); //20
+        console.log(height); //5
+
+//Concatenate arrays
+//Concatenating arrays lets you merge 2 arrays together into a new array that contains the elements of both arrays.
+
+        const lat = [5.234];
+        const lng = [1.412];
+        const point = [...lat, ...lng]; //[5.234, 1.412];
+
+        /**
+         * @param {string} string
+         */
+        
+        
+         const splitStringIntoChars = string => {
+            const cutString = [...string];
+            return cutString;
+        }
+
+        //sample usage
+        console.log(splitStringIntoChars("Hello World!"));
+
+
+
+
+        function getEvenLengthWordsAtProperty(obj, key) {
+            const arr = [];
+            if (Array.isArray(obj.key)){
+           for(let i=0; i< obj.key.length;i++){
+               if (obj.key[i].length %2 !== 1){
+                 arr.push(obj.key[i]);
+               }
+             }}
+              return arr;
+             }
+             
+             
+         function getELWAP(obj, key) {
+            const arr = [];
+            if (Array.isArray(obj.key)){
+                   obj.key.forEach(keys => { 
+                     if(keys.length %2 !== 1){
+                     arr.push(keys);
+                   }});}
+              return arr;
+             }    
+             
+             
+         
+         var obj = {
+           key: ['a', 'long', 'game']
+         };
+         var output = getEvenLengthWordsAtProperty(obj, 'key');
+         var output2 = getELWAP(obj, 'key');
+         console.log(output); // --> ['long', 'game']
+         console.log(output2);
+
+
+         /**
+ * @param {array} location
+ */
+        const getLatLng = location => {
+            //destructure into 2 variables: lat & lng
+        const [lat, lng] = location;
+            return `The latitude is ${lat} and the longitude is ${lng}`;
+        }
+
+        //sample usage
+        const location = [24.235235, 2.5734];
+        console.log(getLatLng(location));
