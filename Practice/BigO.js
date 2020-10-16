@@ -1,4 +1,4 @@
-/ single line loops write BigO 
+// single line loops write BigO 
 
 //Constant time: O(1)
 //Linear time: O(n)
