@@ -441,3 +441,10 @@ const getSumOfGrades = results => {
         //sample usage
         const location = [24.235235, 2.5734];
         console.log(getLatLng(location));
+
+
+try {
+    invalidFunction();
+    } catch (error){
+    console.log(error);
+}
