@@ -24,4 +24,6 @@ class Player {
 
 }
 
-const playerOne = new Player("mark","male","wind","rouge","steal","59", "9999")
+let playerOne = new Player("mark","male","wind","rouge","steal","59", "9999");
+
+console.log(playerOne);
